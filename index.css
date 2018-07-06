@@ -1,0 +1,197 @@
+
+
+
+
+
+/*header and logo*/
+
+
+.job_page_logo
+{
+	margin-top: 10px;
+	background-color: #1b65ba;
+	width: 200px;
+	padding: 20px;
+	border-radius: 22px 0px 22px 0px;
+	float: left;
+}
+
+.job_page_logo > h3
+{
+	color: #fff;
+}
+
+.job_page_header_text
+{
+	margin-top: 10px;
+	padding-bottom: 20px;
+	line-height: 0px;
+	text-align: center;
+}
+
+
+
+
+
+
+/*jobs listing section */
+
+.jobs_list_container
+{
+	border-bottom: 2px solid #1b65ba;
+}
+
+
+.job
+{
+	background-color: #f7f8f9;
+	margin: 10px 0px 10px 0px;
+}
+
+.jobs_list
+{
+	padding: 10px;
+}
+
+.job_info
+{
+	max-height: 80px;
+	overflow: hidden;
+	padding: 10px;
+}
+
+.job_info_bottom
+{
+	padding: 10px;
+	text-align: center;
+}
+
+.job_button
+{
+  padding: 3px;
+  font-size: 1em;
+  margin: 3px;
+  margin-right: 0px;
+  background-color: #fff;
+  color: #1b65ba;
+  border-radius: 7px;
+  border: 2px solid #1b65ba;
+}
+
+
+.job_button:hover
+{
+  background-color: #1b65ba;
+  color: #fff;
+}
+
+
+
+
+
+
+/*modal*/
+
+.job_modal_text
+{
+	text-align: center;
+}
+
+.job_modal_text > h3
+{
+	color: #1b65ba;
+}
+
+.job_modal_button
+{
+  padding: 3px;
+  font-size: 1em;
+  margin: 3px;
+  margin-right: 0px;
+  background-color: #fff;
+  color: #1b65ba;
+  border-radius: 7px;
+  border: 2px solid #1b65ba;
+}
+
+
+.job_modal_button:hover
+{
+  background-color: #1b65ba;
+  color: #fff;
+}
+
+
+
+
+
+
+/*Search options*/
+
+.job_input
+{
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px 10px 10px 0px;
+	border: 2px solid #1b65ba;
+
+}
+
+.job_input_panel
+{
+	padding-top: 50px;
+}
+
+.job_input_panel > button
+{
+  padding: 8px;
+  font-size: 0.8em;
+  margin: 10px 10px 10px 2px;
+  margin-right: 0px;
+  color: #fff;
+  border-radius: 7px;
+  border: 2px solid #1b65ba;
+  background-color: #1b65ba;
+}
+
+.job_input_panel > button:hover
+{
+	color: #1b65ba;
+ 	background-color: #fff;
+ 
+}
+
+
+
+
+/*Load more jobs section @ bottom*/
+
+
+.jobs_page_bottom
+{
+	text-align: center;
+	padding: 20px;
+}
+
+
+
+
+/* Smaller devices */
+@media only screen and (max-width: 900px)  
+{
+
+	.job_page_header_text
+	{
+		text-align: left;
+	}
+
+
+
+}
+
+
+
+
+
+
+

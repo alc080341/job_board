@@ -16,6 +16,7 @@ class JobsList extends React.Component
 			jobButton: 'Load jobs',
 			order: true,
 			alternativeOrder: "Sort date ascending",
+			reachedEndOfJobs: 0,
 		};
 	}
 
@@ -51,7 +52,11 @@ class JobsList extends React.Component
 				}				
 				if (newCount === currentCount)
 				{
-					this.setState({jobButton: "Sorry, no more jobs!"});
+					this.setState({reachedEndOfJobs: this.state.reachedEndOfJobs + 1});
+					if(this.state.reachedEndOfJobs > 1)
+					{
+						this.setState({jobButton: "Sorry, no more jobs!"});
+					}
 				}
 
 			}

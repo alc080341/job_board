@@ -13,16 +13,15 @@ class JobsList extends React.Component
 			jobs: props.jobs, 
 			show: false,
 			searchLimit: 6,
-			jobButton: 'Load more jobs',
+			jobButton: 'Load jobs',
 			order: true,
-			alternativeOrder: true,
-			alternativeOrderText: 'Sort date descending'
+			alternativeOrder: "Sort date ascending",
 		};
 	}
 
 	// Fetches data from the API
 	displayJobs = (event) => {
-		let currentOrder = (this.state.order === true) ? "ASC" : "DESC";
+		let currentOrder = (this.state.order === true) ? "DESC" : "ASC";
 		fetch('https://chamberscreative.co.uk/job_board/backend/endpoint.php?order='+currentOrder+'&request='+this.state.searchLimit, {
 			method: 'POST',
 			headers: {
@@ -48,10 +47,11 @@ class JobsList extends React.Component
 				{
 					this.setState({jobs: res});
 					this.setState({searchLimit: this.state.searchLimit + 3});
+					this.setState({jobButton: "Load more jobs"});
 				}				
 				if (newCount === currentCount)
 				{
-					this.setState({jobButton: "No more jobs!"});
+					this.setState({jobButton: "Sorry, no more jobs!"});
 				}
 
 			}
@@ -63,8 +63,7 @@ class JobsList extends React.Component
 // Function for handling change of date ordering
 handleOrder = () => {
 	this.setState({order: !this.state.order});
-	this.setState({alternativeOrder: !this.state.alternativeOrder});
-	this.setState({alternativeOrderText: this.state.alternativeOrder === true ? "Sort date ascending" : "Sort date descending"})
+	this.setState({alternativeOrder: this.state.order === true ? "Sort date ascending" : "Sort date descending"});
 	this.displayJobs("change_order");
 }
 
@@ -81,6 +80,9 @@ updateSearch = (event) => {
 
 
 }
+
+
+
 
 
 render()
@@ -111,7 +113,7 @@ render()
 				className="job_input"
 				name="locationSearch"
 				/>
-				<button className="job_button" onClick={this.handleOrder}>{this.state.alternativeOrderText}</button>
+				<button className="job_button" onClick={this.handleOrder}>{this.state.alternativeOrder}</button>
 				</div>
 				</div>
 				<div className="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-sm-12">

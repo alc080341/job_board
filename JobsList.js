@@ -42,17 +42,24 @@ class JobsList extends React.Component
 
 			else if(event === "display_jobs")
 			{
+				// Check the length of both the received JSON array and the current JSON array
 				let newCount = Object.keys(res).length;
 				let currentCount = Object.keys(this.state.jobs).length;
+
+				// If the new received array is more than the current array, display extra jobs
 				if (newCount >= currentCount)
 				{
 					this.setState({jobs: res});
 					this.setState({searchLimit: this.state.searchLimit + 3});
 					this.setState({jobButton: "Load more jobs"});
 				}				
+
+				// If the length of both the current array and the recieved array are the same, then the end of the DB has been reached.
 				if (newCount === currentCount)
 				{
 					this.setState({reachedEndOfJobs: this.state.reachedEndOfJobs + 1});
+
+					// If this happens more than once, display an error message (if it happened just once it could just be that the page has loaded).
 					if(this.state.reachedEndOfJobs > 1)
 					{
 						this.setState({jobButton: "Sorry, no more jobs!"});
